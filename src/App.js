@@ -4,8 +4,8 @@ import styled, { ThemeProvider } from "styled-components";
 
 import Home from "containers/pages/Home";
 
-import darkTheme from "styles/default-dark";
-import lightTheme from "styles/default-light";
+import darkTheme from "config/theme-default-dark";
+import lightTheme from "config/theme-default-light";
 
 const themes = {
   dark: darkTheme,

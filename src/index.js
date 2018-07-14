@@ -6,12 +6,15 @@ import registerServiceWorker from "registerServiceWorker";
 import { injectGlobal } from "styled-components";
 import { FocusStyleManager } from "@blueprintjs/core";
 
-import * as settings from "ducks/settings.duck";
-
-import App from "App";
 import "@blueprintjs/core/lib/css/blueprint.css";
 import "@blueprintjs/icons/lib/css/blueprint-icons.css";
 import "react-virtualized/styles.css";
+
+import initialState from "config/initial-state";
+import * as settings from "ducks/settings.duck";
+import * as feed from "ducks/feed.duck";
+
+import App from "App";
 
 // Global styles
 injectGlobal`
@@ -30,10 +33,8 @@ FocusStyleManager.onlyShowFocusOnTabs();
 
 // Create Reclare context
 const ctx = createContext({
-  initialState: {
-    theme: "light",
-  },
-  ducks: [settings],
+  initialState,
+  ducks: [settings, feed],
 });
 
 ReactDOM.render(

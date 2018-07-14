@@ -6,5 +6,5 @@ export default styled.div`
   min-width: 0;
   width: ${p => `${p.width}px`};
   height: 100%;
-  overflow: hidden;
+  z-index: 1;
 `;

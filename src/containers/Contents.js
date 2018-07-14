@@ -2,11 +2,14 @@ import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 
+import Resizer from "components/Resizer";
+
 const Container = styled.div`
+  position: relative;
   flex-shrink: 0;
   width: ${p => `${p.width}px`};
   height: 100%;
-  border-left: 1px solid ${p => p.theme.divider};
+  z-index: 2;
 
   display: flex;
   align-items: center;
@@ -18,10 +21,22 @@ class Contents extends React.Component {
     super(props, context);
 
     this.state = {};
+
+    this.containerRef = null;
   }
 
   render() {
-    return <Container width={this.props.width}>Contents</Container>;
+    return (
+      <Container
+        width={this.props.width}
+        innerRef={ref => {
+          this.containerRef = ref;
+        }}
+      >
+        <Resizer position="left" getParent={() => this.containerRef} />
+        Contents
+      </Container>
+    );
   }
 }
 

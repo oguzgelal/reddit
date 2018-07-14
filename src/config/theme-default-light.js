@@ -1,6 +1,6 @@
 import { Colors } from "@blueprintjs/core";
 import { transparentize } from "polished";
-import global from './global';
+import global from "./global-styles";
 
 export default {
   ...global,
