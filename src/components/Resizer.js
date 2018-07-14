@@ -36,7 +36,6 @@ fakeDragImage.src =
 
 const handleDragStart = (e, parent) => {
   e.dataTransfer.setDragImage(fakeDragImage, 0, 0);
-  // console.log("drag started: ", e, parent);
 };
 
 const handleDragEnd = (e, parent) => {
@@ -44,7 +43,7 @@ const handleDragEnd = (e, parent) => {
 };
 
 const handleDrag = (e, parent) => {
-  console.log(e.screenX);
+  // TODO: calculate parents dimentions
 };
 
 const Resizer = ({ position, getParent }) => {

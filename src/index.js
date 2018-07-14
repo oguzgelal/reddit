@@ -8,7 +8,7 @@ import { FocusStyleManager } from "@blueprintjs/core";
 
 import "@blueprintjs/core/lib/css/blueprint.css";
 import "@blueprintjs/icons/lib/css/blueprint-icons.css";
-import "react-virtualized/styles.css";
+import "react-perfect-scrollbar/dist/css/styles.css";
 
 import initialState from "config/initial-state";
 import * as settings from "ducks/settings.duck";

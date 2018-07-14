@@ -1,7 +1,7 @@
 import { Colors } from "@blueprintjs/core";
 
-const rowItemPaddingTB = 8;
-const rowItemPaddingLR = 14;
+const rowItemPaddingTB = 10;
+const rowItemPaddingLR = 10;
 
 export default {
   primary: Colors.BLUE3,

@@ -2,6 +2,11 @@ import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 
+// TODO: lazy-render feed items
+// on "onScrollEnd" detect position in screen
+// if off screen, apply set body height and
+// apply "display: none" to contents
+
 const Wrapper = styled.div`
   position: relative;
   display: flex;
