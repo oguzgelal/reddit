@@ -12,6 +12,7 @@ import Logo from "components/Typography/Logo";
 import Button from "components/Button";
 
 const ControlColumn = Column.extend`
+  min-width: 250px !important;
   z-index: 2;
 `;
 
@@ -19,12 +20,21 @@ class Control extends React.Component {
   constructor(props, context) {
     super(props, context);
 
-    this.state = {};
+    this.state = {
+      width: 300,
+    };
+
+    this.containerRef = null;
+    this.setRef = this.setRef.bind(this);
+  }
+
+  setRef(ref) {
+    this.containerRef = ref;
   }
 
   render() {
     return (
-      <ControlColumn width={this.props.width}>
+      <ControlColumn width={this.state.width} innerRef={this.setRef}>
         <ActionItem
           title={<Logo>Reddit</Logo>}
           items={[
@@ -36,14 +46,16 @@ class Control extends React.Component {
             />,
           ]}
         />
-        <Resizer position="right" />
+        <Resizer
+          position="right"
+          getParent={() => this.containerRef}
+          updateWidth={width => this.setState({ width })}
+        />
       </ControlColumn>
     );
   }
 }
 
-Control.propTypes = {
-  width: PropTypes.number,
-};
+Control.propTypes = {};
 
 export default Control;

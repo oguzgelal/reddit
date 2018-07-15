@@ -22,9 +22,9 @@ class Home extends React.Component {
   render() {
     return (
       <Container>
-        <Control width={300} />
+        <Control />
         <Feed />
-        <Contents width={520} />
+        <Contents />
       </Container>
     );
   }

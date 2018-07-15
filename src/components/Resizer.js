@@ -17,7 +17,6 @@ const ResizerBar = styled.div`
     cursor: col-resize;
   }
 
-  /* line */
   &:before {
     content: "";
     position: absolute;
@@ -38,29 +37,34 @@ const handleDragStart = (e, parent) => {
   e.dataTransfer.setDragImage(fakeDragImage, 0, 0);
 };
 
-const handleDragEnd = (e, parent) => {
-  // console.log("drag ended: ", e, parent);
+const handleDrag = (e, parent, position, updateWidth) => {
+  try {
+    if (!e.clientX) return;
+    const { x, width } = parent.getBoundingClientRect();
+    const origin = position === "right" ? x : x + width;
+    updateWidth(Math.abs(origin - e.clientX));
+  } catch (e) {
+    return null;
+  }
 };
 
-const handleDrag = (e, parent) => {
-  // TODO: calculate parents dimentions
-};
-
-const Resizer = ({ position, getParent }) => {
+const Resizer = ({ position, parent, getParent, updateWidth }) => {
   return (
     <ResizerBar
       draggable
       position={position}
-      onDrag={e => handleDrag(e, getParent())}
-      onDragEnd={e => handleDragEnd(e, getParent())}
-      onDragStart={e => handleDragStart(e, getParent())}
+      onDrag={e => handleDrag(e, parent || getParent(), position, updateWidth)}
+      onDragOver={e => e.preventDefault()}
+      onDragStart={e => handleDragStart(e, parent || getParent())}
     />
   );
 };
 
 Resizer.propTypes = {
   position: PropTypes.oneOf(["left", "right"]),
+  parent: PropTypes.object,
   getParent: PropTypes.func,
+  updateWidth: PropTypes.func,
 };
 
 Resizer.defaultProps = {
