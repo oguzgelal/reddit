@@ -1,6 +1,6 @@
-import Base from "./Base";
+import Text from "./Text";
 
-export default Base.extend`
+export default Text.extend`
   color: ${p => p.theme.heading};
   font-size: 12pt;
   font-weight: 400;

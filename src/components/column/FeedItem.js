@@ -12,9 +12,6 @@ const Wrapper = styled.div`
   display: flex;
   height: ${p => `${p.height}px`};
   border-bottom: 1px solid ${p => p.theme.divider};
-  &:hover {
-    cursor: pointer;
-  }
 `;
 
 const Band = styled.div`
@@ -40,10 +37,10 @@ const Body = styled.div`
   background-color: ${p => p.theme.codeBackground};
 `;
 
-const FeedItem = ({ style, height, bandColor, padding, children }) => {
+const FeedItem = ({ style, height, color, padding, children }) => {
   return (
     <Wrapper style={style} height={height}>
-      <Band color={bandColor} />
+      <Band color={color} />
       <Body>{children}</Body>
     </Wrapper>
   );
@@ -52,7 +49,7 @@ const FeedItem = ({ style, height, bandColor, padding, children }) => {
 FeedItem.propTypes = {
   style: PropTypes.object,
   height: PropTypes.number.isRequired,
-  bandColor: PropTypes.string,
+  color: PropTypes.string,
   children: PropTypes.any,
 };
 

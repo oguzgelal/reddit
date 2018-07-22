@@ -2,8 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import Scroller from "components/Scroller";
-import Column from "components/Column/Column";
-import FeedItem from "components/Column/FeedItems/FeedItem";
+import Column from "components/Column";
+import ClassicItem from "components/column/feedItems/ClassicItem";
 
 const FeedColumn = Column.extend`
   flex-grow: 1;
@@ -20,7 +20,7 @@ class Feed extends React.Component {
 
   renderItems() {
     return [...Array(100).keys()].map(i => (
-      <FeedItem key={i}>item {i}</FeedItem>
+      <ClassicItem key={i} title={`item {${i}}`} />
     ));
   }
 

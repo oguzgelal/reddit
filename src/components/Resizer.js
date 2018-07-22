@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
+import { broadcast } from "reclare";
 
 // zone (in pixels) that resize handle will be grabbed
 // so user won't have to catch a 1 px wide zone
@@ -13,8 +14,9 @@ const ResizerBar = styled.div`
   width: ${handleZone * 2 + 1}px;
   height: 100%;
   flex-shrink: 0;
-  &:hover {
-    cursor: col-resize;
+  cursor: col-resize !important;
+  &:active {
+    cursor: col-resize !important;
   }
 
   &:before {
@@ -54,7 +56,7 @@ const Resizer = ({ position, parent, getParent, updateWidth }) => {
       draggable
       position={position}
       onDrag={e => handleDrag(e, parent || getParent(), position, updateWidth)}
-      onDragOver={e => e.preventDefault()}
+      onDragOver={e => e.preventDefault(e)}
       onDragStart={e => handleDragStart(e, parent || getParent())}
     />
   );

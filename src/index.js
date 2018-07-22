@@ -35,6 +35,7 @@ FocusStyleManager.onlyShowFocusOnTabs();
 const ctx = createContext({
   initialState,
   ducks: [settings, feed],
+  middlewares: { verbose: args => console.log(`> ${args.id}`, args.params) },
 });
 
 ReactDOM.render(

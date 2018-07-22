@@ -6,9 +6,9 @@ import { Classes } from "@blueprintjs/core";
 import { CHANGE_THEME } from "ducks/settings.duck";
 
 import Resizer from "components/Resizer";
-import Column from "components/Column/Column";
-import ActionItem from "components/Column/RowItems/ActionItem";
-import Logo from "components/Typography/Logo";
+import Column from "components/Column";
+import ActionItem from "components/column/rowItems/ActionItem";
+import Logo from "components/typography/Logo";
 import Button from "components/Button";
 
 const ControlColumn = Column.extend`
