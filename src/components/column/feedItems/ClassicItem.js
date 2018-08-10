@@ -8,6 +8,9 @@ import VerticalVote from "components/column/feedItemsShared/VerticalVote";
 const ItemBody = styled.div`
   display: flex;
   height: 100%;
+  padding: 0 ${p => p.theme.rowItemPaddingLR}px;
+  & > div { padding-left: ${p => p.theme.rowItemPaddingLR}px; }
+  & > div:first-child { padding-left: 0 !important; }
 `;
 
 const ThumbWrapper = styled.div`
@@ -20,7 +23,6 @@ const ThumbWrapper = styled.div`
 const Thumb = styled.div`
   height: 60px;
   width: 80px;
-  margin-left: 5px;
   border-radius: 5px;
   overflow: hidden;
   background-color: rgba(0, 0, 0, 0.2);
@@ -30,11 +32,11 @@ const Thumb = styled.div`
   }
 `;
 
-const ClassicItem = ({ height }) => {
+const ClassicItem = ({ verticalVote, height }) => {
   return (
     <FeedItem height={height}>
       <ItemBody>
-        <VerticalVote />
+        {verticalVote && <VerticalVote />}
         <ThumbWrapper>
           <Thumb>
             <img src="https://picsum.photos/200/300/?random" />
@@ -46,6 +48,7 @@ const ClassicItem = ({ height }) => {
 };
 
 ClassicItem.propTypes = {
+  verticalVote: PropTypes.bool,
   height: PropTypes.number,
   title: PropTypes.string,
 };

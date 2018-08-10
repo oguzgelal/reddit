@@ -20,7 +20,11 @@ class Feed extends React.Component {
 
   renderItems() {
     return [...Array(100).keys()].map(i => (
-      <ClassicItem key={i} title={`item {${i}}`} />
+      <ClassicItem
+        key={i}
+        verticalVote
+        title={`item {${i}}`}
+      />
     ));
   }
 

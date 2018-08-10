@@ -14,7 +14,6 @@ const VoteWrapper = styled.div`
   align-items: center;
   justify-content: center;
   height: 100%;
-  width: 45px;
 `;
 
 const VoteButton = styled(Button).attrs({
