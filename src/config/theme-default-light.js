@@ -5,10 +5,10 @@ import global from "./global-styles";
 export default {
   ...global,
   background: Colors.LIGHT_GRAY5,
-  textDefault: Colors.DARK_GRAY4,
-  textMuted: Colors.GRAY1,
+  heading: Colors.DARK_GRAY3,
+  textDefault: Colors.GRAY1,
+  textMuted: Colors.GRAY2,
   textDisabled: transparentize(0.5, Colors.GRAY1),
-  heading: Colors.DARK_GRAY4,
   link: Colors.BLUE2,
   icon: Colors.GRAY1,
   iconHover: Colors.DARK_GRAY4,

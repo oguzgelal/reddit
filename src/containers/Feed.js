@@ -7,6 +7,7 @@ import ClassicItem from "components/column/feedItems/ClassicItem";
 
 const FeedColumn = Column.extend`
   flex-grow: 1;
+  flex: 1 !important;
 `;
 
 class Feed extends React.Component {
@@ -22,8 +23,10 @@ class Feed extends React.Component {
     return [...Array(100).keys()].map(i => (
       <ClassicItem
         key={i}
-        verticalVote
-        title={`item {${i}}`}
+        thumb
+        voteVertical
+        title={`What would you do if the words "Simulation ending in 23H 59M 59S" appeared in the sky?`}
+        subreddit={`/r/AskReddit`}
       />
     ));
   }

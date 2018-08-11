@@ -10,7 +10,7 @@ import styled from "styled-components";
 const Wrapper = styled.div`
   position: relative;
   display: flex;
-  height: ${p => `${p.height}px`};
+  min-height: ${p => `${p.height}px`};
   border-bottom: 1px solid ${p => p.theme.divider};
 `;
 

@@ -5,7 +5,7 @@ import styled from "styled-components";
 import { Icon } from "@blueprintjs/core";
 import { IconNames } from "@blueprintjs/icons";
 import Button from "components/Button";
-import Text from "components/typography/Text";
+import Text from "components/Text";
 
 const VoteWrapper = styled.div`
   flex-shrink: 0;

@@ -8,7 +8,7 @@ import { CHANGE_THEME } from "ducks/settings.duck";
 import Resizer from "components/Resizer";
 import Column from "components/Column";
 import ActionItem from "components/column/rowItems/ActionItem";
-import Logo from "components/typography/Logo";
+import Text from "components/Text";
 import Button from "components/Button";
 
 const ControlColumn = Column.extend`
@@ -16,12 +16,18 @@ const ControlColumn = Column.extend`
   z-index: 2;
 `;
 
+const Logo = Text.extend`
+  color: ${p => p.theme.heading};
+  font-size: 12pt;
+  font-weight: 400;
+`
+
 class Control extends React.Component {
   constructor(props, context) {
     super(props, context);
 
     this.state = {
-      width: 300,
+      width: 260,
     };
 
     this.containerRef = null;

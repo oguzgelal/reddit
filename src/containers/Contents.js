@@ -24,7 +24,7 @@ class Contents extends React.Component {
     super(props, context);
 
     this.state = {
-      width: 520,
+      width: 450,
     };
 
     this.containerRef = null;
